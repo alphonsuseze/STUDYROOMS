@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <style>
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <title>StudyRooms - Find study partners around the world!</title>
+</head>
+
+<body>
+    <header class="fixed-header" style="position: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Adjust as needed */
+    z-index: 1000; /* Ensure it's on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+    ">
+        {% include 'base/navbar.html' %}
+    </header>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% block content %}
+
+
+    {% endblock %}
+
+    <footer class="fixed-footer" style="position: fixed;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #e5e5e5; /* Adjust as needed */
+    z-index: 1000; /* Ensure it's on top of other content */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+    padding: 10px 20px; /* Adjust padding as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+        ">
+        <div class="footer-content" style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Adjust the gap between items */
+        ">
+            <span>Braydia Partners</span> |
+            <a style="color: #000; text-decoration: none; a:hover {
+    text-decoration: underline;
+}" href="https://www.facebook.com">Facebook</a> |
+            <a href="https://www.youtube.com">YouTube</a> |
+            Contact Us: <a href="mailto:email@example.com">Email</a> |
+            Phone #: <a href="tel:+1234567890">+1234567890</a> |
+            <a href="#">Back to the top</a>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
